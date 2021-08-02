@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MySCADA.MainPage">
+
+    <StackLayout>
+       
+      
+        <Button x:Name="bOnName" Text="Start" Clicked="bOnName_Clicked">
+
+
+        </Button>
+        <Button x:Name="bOffName" Text="Stop" Clicked="bOffName_Clicked">
+
+
+        </Button>
+        <Image Source="Tank1.png" HeightRequest="240" WidthRequest="40" TranslationY="50">
+
+        </Image>
+        <ProgressBar x:Name="pName" Progress="0" Rotation="270" ScaleX="0.5" ScaleY="10" TranslationY="-80" ProgressColor="Blue">
+
+        </ProgressBar>
+        <Label x:Name="lName" Text="Level" HorizontalOptions="Center" TranslationY="-90" TextColor="Red">
+
+        </Label>
+        <Image x:Name="iName1" Source="Motor.png" HeightRequest="100" WidthRequest="40" TranslationY="-240" TranslationX="-154"  >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"
+                    NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image  x:Name="iName2" Source="Motor.png" HeightRequest="100" WidthRequest="40" TranslationY="-240" TranslationX="-154">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped_1"
+                    NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image  x:Name="iName3" Source="Motor.png" HeightRequest="100" WidthRequest="40" TranslationY="-320" TranslationX="154" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped_2"
+                    NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+
+</ContentPage>
