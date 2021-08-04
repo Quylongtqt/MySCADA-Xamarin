@@ -12,6 +12,8 @@ namespace MySCADA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FlyoutPage1 : FlyoutPage
     {
+        int ID;
+        public SCADA Parent;
         public FlyoutPage1()
         {
             InitializeComponent();
@@ -51,6 +53,10 @@ namespace MySCADA
             else if (item.Id == 5)
             {
                 Navigation.PushAsync((Page)App.Root.Alarm[0]);
+            }
+            else if (item.Id == 6)
+            {
+                Navigation.PushAsync((Page)App.Root.Map[0]);
             }
             IsPresented = false;
 

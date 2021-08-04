@@ -14,6 +14,8 @@ namespace MySCADA
         public ArrayList Alarm = new ArrayList();
         public ArrayList Motor_Faceplate = new ArrayList();
         public ArrayList Valve_Faceplate = new ArrayList();
+        public ArrayList Map = new ArrayList();
+        public ArrayList Station = new ArrayList();
 
         public PLC S71500;
 
@@ -31,6 +33,16 @@ namespace MySCADA
         {
             fpl.Parent = this;
             Main.Add(fpl);
+        }
+        public void AddMapView(MapPage fpl)
+        {
+            fpl.Parent = this;
+            Map.Add(fpl);
+        }
+        public void AddStationView(FlyoutPage1 fpl)
+        {
+            fpl.Parent = this;
+            Station.Add(fpl);
         }
         public void AddTrendView(TrendView fpl)
         {

@@ -103,16 +103,23 @@ namespace MySCADA
             MOTOR Valve_Faceplate = new MOTOR(3);
 
             MainPage mainPage = new MainPage();
+            MapPage mapPage = new MapPage();
             TrendView trendView = new TrendView();
             AlarmView alarmView = new AlarmView();
+            FlyoutPage1 Tram1_Flyout_Page = new FlyoutPage1();
 
             Root.AddFaceplate(Motor_1_Faceplate);
             Root.AddFaceplate(Motor_2_Faceplate);
             Root.AddFaceplate(Valve_Faceplate);
             Root.AddMainView(mainPage);
+            Root.AddMapView(mapPage);
+            Root.AddStationView(Tram1_Flyout_Page);
+
             Root.AddTrendView(trendView);
             Root.AddAlarmView(alarmView);
-            MainPage = new NavigationPage(new FlyoutPage1());
+
+            // MainPage = new NavigationPage(new FlyoutPage1());
+            MainPage = new NavigationPage(mapPage);
         }
 
         protected override void OnStart()

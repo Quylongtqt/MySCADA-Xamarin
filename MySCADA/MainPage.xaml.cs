@@ -15,9 +15,9 @@ namespace MySCADA
 
         public MainPage()
         {
-           
+
             InitializeComponent();
-            
+
             Device.StartTimer(TimeSpan.FromMilliseconds(500), () =>
             {
                 // do something every 60 seconds
@@ -25,39 +25,39 @@ namespace MySCADA
                 {
                     Task task = Parent.FindTask("Task_1");
                     Tag tag;
-                    
-                        if (task != null)
-                        {
-                            tag = task.FindTag("Motor_1_RunFeedback");
-                            if (tag != null)
-                            {
 
-                                if (Convert.ToBoolean(tag.Value))
-                                iName1.Source ="MotorON.png";
-                                else iName1.Source ="Motor.png";
-                            }
+                    if (task != null)
+                    {
+                        tag = task.FindTag("Motor_1_RunFeedback");
+                        if (tag != null)
+                        {
+
+                            if (Convert.ToBoolean(tag.Value))
+                                iName1.Source = "MotorON.png";
+                            else iName1.Source = "Motor.png";
+                        }
                         tag = task.FindTag("Motor_2_RunFeedback");
                         if (tag != null)
                         {
 
                             if (Convert.ToBoolean(tag.Value))
-                                iName2.Source ="MotorON.png";
-                            else iName2.Source ="Motor.png";
+                                iName2.Source = "MotorON.png";
+                            else iName2.Source = "Motor.png";
                         }
                         tag = task.FindTag("Valve_RunFeedback");
                         if (tag != null)
                         {
 
                             if (Convert.ToBoolean(tag.Value))
-                                iName3.Source ="MotorON.png";
-                            else iName3.Source ="Motor.png";
+                                iName3.Source = "MotorON.png";
+                            else iName3.Source = "Motor.png";
                         }
 
                     }
 
-                    
-                   
-                   
+
+
+
                     Task task3 = Parent.FindTask("Task_2");
                     Tag tag3;
                     if (task3 != null)
@@ -67,14 +67,14 @@ namespace MySCADA
                         if (tag3 != null)
                         {
                             lName.Text = Convert.ToString(tag3.Value);
-                            pName.Progress = Convert.ToDouble(tag3.Value)/100d;
+                            pName.Progress = Convert.ToDouble(tag3.Value) / 100d;
                         }
 
 
                     }
 
 
-                  
+
                     // interact with UI elements
                 });
                 return true; // runs again, or false to stop
@@ -87,7 +87,7 @@ namespace MySCADA
             Parent.S71500.WriteBool("M0.0", false);
         }
 
-        
+
 
         private void bOffName_Clicked(object sender, EventArgs e)
         {

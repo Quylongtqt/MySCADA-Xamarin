@@ -39,6 +39,7 @@ namespace MySCADA
                     new FlyoutPage1FlyoutMenuItem {Type=typeof(MOTOR), Id = 3, Title = "Motor 3" },
                     new FlyoutPage1FlyoutMenuItem {Type=typeof(TrendView), Id = 4, Title = "Trend" },
                     new FlyoutPage1FlyoutMenuItem {Type=typeof(AlarmView), Id = 5, Title = "Alarm" },
+                    new FlyoutPage1FlyoutMenuItem {Type=typeof(MapPage), Id = 6, Title = "Map" },
                 });
             }
 

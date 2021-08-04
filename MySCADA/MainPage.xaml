@@ -4,8 +4,8 @@
              x:Class="MySCADA.MainPage">
 
     <StackLayout>
-       
-      
+
+
         <Button x:Name="bOnName" Text="Start" Clicked="bOnName_Clicked">
 
 
