@@ -10,9 +10,12 @@ namespace MySCADA
         public string IPAddress = "192.168.1.201";
         System.Timers.Timer ReadPLCTimer = new System.Timers.Timer();
         Plc thePLC;
-        public Device1 Motor_1 = new Device1();   // Device = "Motor_1"
-        public Device1 Motor_2 = new Device1();   // Device = "Motor_2"
-        public Device1 Valve = new Device1();     // Device = "Valve"
+        public PLC_Device Motor_1 = new PLC_Device();   // Device = "Motor_1"
+        public PLC_Device Motor_2 = new PLC_Device();   // Device = "Motor_2"
+        public PLC_Device Motor_3 = new PLC_Device();   // Device = "Motor_3"
+        public PLC_Device Motor_4 = new PLC_Device();   // Device = "Motor_4"
+        public PLC_Device Motor_5 = new PLC_Device();   // Device = "Motor_5"
+
         public SCADA Parent;
         public ushort level;
         public PLC()
@@ -42,7 +45,9 @@ namespace MySCADA
                 {
                     thePLC.ReadClass(Motor_1, 1);
                     thePLC.ReadClass(Motor_2, 2);
-                    thePLC.ReadClass(Valve, 3);
+                    thePLC.ReadClass(Motor_3, 3);
+                    thePLC.ReadClass(Motor_4, 4);
+                    thePLC.ReadClass(Motor_5, 5);
                     object obj = thePLC.Read("MW20");
                     level = ((ushort)obj);
 
@@ -85,7 +90,7 @@ namespace MySCADA
         }
     }
 
-    public class Device1
+    public class PLC_Device
     {
         public ushort Mode { get; set; } // "Mode"
         public bool Start { get; set; } // "Start"

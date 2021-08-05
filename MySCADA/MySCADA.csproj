@@ -8,14 +8,17 @@
   <ItemGroup>
     <Compile Remove="Models\**" />
     <Compile Remove="Services\**" />
+    <Compile Remove="Station_2\**" />
     <Compile Remove="ViewModels\**" />
     <Compile Remove="Views\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="Station_2\**" />
     <EmbeddedResource Remove="ViewModels\**" />
     <EmbeddedResource Remove="Views\**" />
     <None Remove="Models\**" />
     <None Remove="Services\**" />
+    <None Remove="Station_2\**" />
     <None Remove="ViewModels\**" />
     <None Remove="Views\**" />
   </ItemGroup>
@@ -57,23 +60,35 @@
     <EmbeddedResource Update="AlarmViewDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="FlyoutPage1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="FlyoutPage1Detail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="FlyoutPage1Flyout.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MOTOR.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StationPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StationPage2Detail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StationPage2Flyout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Station_1\StationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Station_1\StationPageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Station_1\StationPageFlyout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TrendView.xaml">
       <Generator>MSBuild:Compile</Generator>

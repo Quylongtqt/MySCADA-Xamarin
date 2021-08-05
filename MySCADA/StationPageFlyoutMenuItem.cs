@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySCADA
 {
-    public class FlyoutPage1FlyoutMenuItem
+    public class StationPageFlyoutMenuItem
     {
         public Type Type { set; get; }
         public int Id { get; set; }

@@ -5,23 +5,18 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="lName" Text="N">
-
             </Label>
+            
             <Picker x:Name="pName" ItemsSource="{Binding pItems}"  SelectedIndexChanged="pName_SelectedIndexChanged" >
-
-
             </Picker>
-            <Button x:Name="bOnName" Text="Start" Clicked="bOnName_Clicked">
-                
-                
-            </Button>
-            <Button x:Name="bOffName" Text="Stop" Clicked="bOffName_Clicked">
 
-
+            <Button x:Name="bOnName" Text="MOTOR ON" Clicked="bOnName_Clicked">
             </Button>
-            <Image x:Name="iName" Source="off.png" WidthRequest="200"
-               HeightRequest="200">
-                
+            
+            <Button x:Name="bOffName" Text="MOTOR OFF" Clicked="bOffName_Clicked">
+            </Button>
+            
+            <Image x:Name="iName" Source="off.png" WidthRequest="200" HeightRequest="200">                
             </Image>
         </StackLayout>
     </ContentPage.Content>

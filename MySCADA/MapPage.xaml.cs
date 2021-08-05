@@ -53,7 +53,7 @@ namespace MySCADA
             map.Pins.Add(pinTram2);
             map.Pins.Add(pinTram3);
             
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(pinTram2.Position, Distance.FromMeters(5000)));
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(pinTram1.Position, Distance.FromMeters(4000)));
 
             map.InfoWindowClicked += Map_InfoWindowClicked;
             
@@ -67,7 +67,7 @@ namespace MySCADA
             }
             if (e.Pin.Tag.ToString() == "id_2")
             {
-                Navigation.PushAsync((Page)App.Root.Alarm[0]);
+                Navigation.PushAsync((Page)App.Root.Station2[0]);
             }
             if (e.Pin.Tag.ToString() == "id_3")
             {

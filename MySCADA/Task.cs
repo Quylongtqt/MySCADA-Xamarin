@@ -139,41 +139,123 @@ namespace MySCADA
                                 break;
                         }
                         break;
-                    case "Valve":
+                    case "Motor_3":
                         switch (signal)
                         {
                             case "Mode":
-                                tag.Value = Parent.S71500.Valve.Mode;
+                                tag.Value = Parent.S71500.Motor_3.Mode;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "Start":
-                                tag.Value = Parent.S71500.Valve.Start;
+                                tag.Value = Parent.S71500.Motor_3.Start;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "Stop":
-                                tag.Value = Parent.S71500.Valve.Stop;
+                                tag.Value = Parent.S71500.Motor_3.Stop;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "RunFeedback":
-                                tag.Value = Parent.S71500.Valve.RunFeedback;
+                                tag.Value = Parent.S71500.Motor_3.RunFeedback;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "Reset":
-                                tag.Value = Parent.S71500.Valve.Reset;
+                                tag.Value = Parent.S71500.Motor_3.Reset;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "Fault":
-                                tag.Value = Parent.S71500.Valve.Fault;
+                                tag.Value = Parent.S71500.Motor_3.Fault;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;
                             case "Pos":
-                                tag.Value = Parent.S71500.Valve.Pos;
+                                tag.Value = Parent.S71500.Motor_3.Pos;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                        }
+
+                        break;
+                    case "Motor_4":
+                        switch (signal)
+                        {
+                            case "Mode":
+                                tag.Value = Parent.S71500.Motor_4.Mode;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Start":
+                                tag.Value = Parent.S71500.Motor_4.Start;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Stop":
+                                tag.Value = Parent.S71500.Motor_4.Stop;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "RunFeedback":
+                                tag.Value = Parent.S71500.Motor_4.RunFeedback;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Reset":
+                                tag.Value = Parent.S71500.Motor_4.Reset;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Fault":
+                                tag.Value = Parent.S71500.Motor_4.Fault;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Pos":
+                                tag.Value = Parent.S71500.Motor_4.Pos;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                        }
+
+                        break;
+                    case "Motor_5":
+                        switch (signal)
+                        {
+                            case "Mode":
+                                tag.Value = Parent.S71500.Motor_5.Mode;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Start":
+                                tag.Value = Parent.S71500.Motor_5.Start;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Stop":
+                                tag.Value = Parent.S71500.Motor_5.Stop;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "RunFeedback":
+                                tag.Value = Parent.S71500.Motor_5.RunFeedback;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Reset":
+                                tag.Value = Parent.S71500.Motor_5.Reset;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Fault":
+                                tag.Value = Parent.S71500.Motor_5.Fault;
+                                tag.Quality = "GOOD";
+                                tag.TimeStamp = DateTime.Now;
+                                break;
+                            case "Pos":
+                                tag.Value = Parent.S71500.Motor_5.Pos;
                                 tag.Quality = "GOOD";
                                 tag.TimeStamp = DateTime.Now;
                                 break;

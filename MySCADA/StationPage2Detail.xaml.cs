@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace MySCADA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FlyoutPage1Detail : ContentPage
+    public partial class StationPage2Detail : ContentPage
     {
-        public FlyoutPage1Detail()
+        public StationPage2Detail()
         {
             InitializeComponent();
             Device.StartTimer(TimeSpan.FromMilliseconds(500), () =>
@@ -20,71 +20,51 @@ namespace MySCADA
                 // do something every 60 seconds
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    Task task = App.Root.FindTask("Task_1");
+                    Task task5 = App.Root.FindTask("Task_5");
                     Tag tag;
 
-                    if (task != null)
+                    if (task5 != null)
                     {
-                        tag = task.FindTag("Motor_1_RunFeedback");
+                        tag = task5.FindTag("Motor_4_RunFeedback");
                         if (tag != null)
                         {
-
                             if (Convert.ToBoolean(tag.Value))
                                 iName1.Source = "MotorON.png";
                             else iName1.Source = "Motor.png";
                         }
-                        tag = task.FindTag("Motor_2_RunFeedback");
+                        tag = task5.FindTag("Motor_5_RunFeedback");
                         if (tag != null)
                         {
-
                             if (Convert.ToBoolean(tag.Value))
                                 iName2.Source = "MotorON.png";
                             else iName2.Source = "Motor.png";
                         }
-                        tag = task.FindTag("Valve_RunFeedback");
-                        if (tag != null)
-                        {
-
-                            if (Convert.ToBoolean(tag.Value))
-                                iName3.Source = "MotorON.png";
-                            else iName3.Source = "Motor.png";
-                        }
 
                     }
 
-
-
-
-                    Task task3 = App.Root.FindTask("Task_2");
-                    Tag tag3;
-                    if (task3 != null)
+                    Task task6 = App.Root.FindTask("Task_6");
+                    Tag tag1;
+                    if (task6 != null)
                     {
-
-                        tag3 = task3.FindTag("level");
-                        if (tag3 != null)
+                        tag1 = task6.FindTag("level_2");
+                        if (tag1 != null)
                         {
-                            lName.Text = Convert.ToString(tag3.Value);
-                            pName.Progress = Convert.ToDouble(tag3.Value) / 100d;
+                            lName.Text = Convert.ToString(tag1.Value);
+                            pName.Progress = Convert.ToDouble(tag1.Value) / 100d;
                         }
 
-
                     }
-
-
 
                     // interact with UI elements
                 });
                 return true; // runs again, or false to stop
             });
         }
-
         private void bOnName_Clicked(object sender, EventArgs e)
         {
             App.Root.S71500.WriteBool("M0.0", true);
             App.Root.S71500.WriteBool("M0.0", false);
         }
-
-
 
         private void bOffName_Clicked(object sender, EventArgs e)
         {
@@ -94,18 +74,13 @@ namespace MySCADA
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync((Page)App.Root.Motor_Faceplate[0]);
+            Navigation.PushAsync((Page)App.Root.Motor_Faceplate[3]);
         }
 
         private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync((Page)App.Root.Motor_Faceplate[1]);
+            Navigation.PushAsync((Page)App.Root.Motor_Faceplate[4]);
         }
 
-        private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
-        {
-            Navigation.PushAsync((Page)App.Root.Motor_Faceplate[2]);
-        }
     }
-
 }

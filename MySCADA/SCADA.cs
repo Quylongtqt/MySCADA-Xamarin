@@ -8,53 +8,71 @@ namespace MySCADA
     public class SCADA
     {
         ArrayList Tasks = new ArrayList();
-        ArrayList Displays = new ArrayList();
+
         public ArrayList Main = new ArrayList();
+        public ArrayList Main2 = new ArrayList();
         public ArrayList Trend = new ArrayList();
         public ArrayList Alarm = new ArrayList();
         public ArrayList Motor_Faceplate = new ArrayList();
         public ArrayList Valve_Faceplate = new ArrayList();
         public ArrayList Map = new ArrayList();
         public ArrayList Station = new ArrayList();
+        public ArrayList Station2 = new ArrayList();
 
         public PLC S71500;
 
-        public void AddTask(Task task)
-        {
-            task.Parent = this;
-            Tasks.Add(task);
-        }
-        public void AddFaceplate(MOTOR fpl)
+        public void AddMapView(MapPage fpl)
         {
             fpl.Parent = this;
-            Motor_Faceplate.Add(fpl);
+            Map.Add(fpl);
+        }
+        // Trạm 1:
+        public void AddStationView(StationPage fpl)
+        {
+            fpl.Parent = this;
+            Station.Add(fpl);
         }
         public void AddMainView(MainPage fpl)
         {
             fpl.Parent = this;
             Main.Add(fpl);
         }
-        public void AddMapView(MapPage fpl)
+
+        // Trạm 2:
+        public void AddStation2View(StationPage2 fpl)
         {
             fpl.Parent = this;
-            Map.Add(fpl);
+            Station2.Add(fpl);
         }
-        public void AddStationView(FlyoutPage1 fpl)
+        public void AddMain2View(MainPage2 fpl)
         {
             fpl.Parent = this;
-            Station.Add(fpl);
+            Main2.Add(fpl);
         }
         public void AddTrendView(TrendView fpl)
         {
             fpl.Parent = this;
             Trend.Add(fpl);
         }
+
         public void AddAlarmView(AlarmView fpl)
         {
             fpl.Parent = this;
             Alarm.Add(fpl);
         }
 
+        public void AddTask(Task task)
+        {
+            task.Parent = this;
+            Tasks.Add(task);
+        }
+
+        public void AddFaceplate(MOTOR fpl)
+        {
+            fpl.Parent = this;
+            Motor_Faceplate.Add(fpl);
+        }
+        
         public void AddPLC(PLC plc)
         {
             plc.Parent = this;

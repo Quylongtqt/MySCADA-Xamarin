@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MySCADA.FlyoutPage1"
+             x:Class="MySCADA.StationPage"
              xmlns:pages="clr-namespace:MySCADA">
   <FlyoutPage.Flyout>
-    <pages:FlyoutPage1Flyout x:Name="FlyoutPage" />
+    <pages:StationPageFlyout x:Name="FlyoutPage" />
   </FlyoutPage.Flyout>
   <FlyoutPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:FlyoutPage1Detail />
+        <pages:StationPageDetail />
       </x:Arguments>
     </NavigationPage>
   </FlyoutPage.Detail>

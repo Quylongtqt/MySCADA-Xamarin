@@ -20,14 +20,12 @@ namespace MySCADA
         public MOTOR(int id)
         {
             pItems = new ObservableCollection<string>()
-            {  "Auto","Manual"};
+            {"Auto","Manual"};
 
             InitializeComponent();
            
             ID = id;
-           
-            //lName.Text = Convert.ToString(ID);
-           
+                      
             pName.BindingContext = this;
            
             Device.StartTimer(TimeSpan.FromMilliseconds(200), () =>
@@ -35,55 +33,43 @@ namespace MySCADA
                 // do something every 60 seconds
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    Task task = Parent.FindTask("Task_1");
-                    Tag tag;
-                    if (ID == 3)
+                    Task task1 = Parent.FindTask("Task_1");
+                    Tag temp_tag1;
+                    string Prefix = $"Motor_{ID}";
+                    if (task1 != null)
                     {
-                        if (task != null)
+                        temp_tag1 = task1.FindTag($"{Prefix}_Mode");
+                        if (temp_tag1 != null)
                         {
-
-                            tag = task.FindTag("Valve_Mode");
-                            if (tag != null)
-                            {
-                                lName.Text = tag.Value.ToString();
-                            }
-                            tag = task.FindTag("Valve_RunFeedback");
-                            if (tag != null)
-                            {
-
-                                if (Convert.ToBoolean(tag.Value))
-                                    iName.Source = "on.png";
-                                else iName.Source = "off.png";
-                            }
-
+                            lName.Text = temp_tag1.Value.ToString();
                         }
-
-                    }
-                    else
-                    {
-                        string Prefix = $"Motor_{ID}";
-                        if (task != null)
+                        temp_tag1 = task1.FindTag($"{Prefix}_RunFeedback");
+                        if (temp_tag1 != null)
                         {
-
-                            tag = task.FindTag($"{Prefix}_Mode");
-                            if (tag != null)
-                            {
-                                lName.Text = tag.Value.ToString();
-                            }
-                            tag = task.FindTag($"{Prefix}_RunFeedback");
-                            if (tag != null)
-                            {
-
-                                if (Convert.ToBoolean(tag.Value))
-                                    iName.Source = "on.png";
-                                else iName.Source = "off.png";
-                            }
-
+                            if (Convert.ToBoolean(temp_tag1.Value))
+                                iName.Source = "on.png";
+                            else iName.Source = "off.png";
                         }
                     }
 
+                    Task task5 = Parent.FindTask("Task_5");
+                    Tag temp_tag2;
+                    if (task5 != null)
+                    {
+                        temp_tag2 = task5.FindTag($"{Prefix}_Mode");
+                        if (temp_tag2 != null)
+                        {
+                            lName.Text = temp_tag2.Value.ToString();
+                        }
+                        temp_tag2 = task5.FindTag($"{Prefix}_RunFeedback");
+                        if (temp_tag2 != null)
+                        {
+                            if (Convert.ToBoolean(temp_tag2.Value))
+                                iName.Source = "on.png";
+                            else iName.Source = "off.png";
+                        }
+                    }
 
-                    // interact with UI elements
                 });
                 return true; // runs again, or false to stop
             });
@@ -106,11 +92,13 @@ namespace MySCADA
             var Name = pName.Items[pName.SelectedIndex];
             if (Name == "Auto")
             {
-                Parent.S71500.WriteInt($"DB{ID}.DBW0", 2);
+                short value = 2; //Khai báo kiểu short ( tương đương int 16 bits của S7)
+                Parent.S71500.WriteInt($"DB{ID}.DBW0", value);
             }
             else if (Name == "Manual")
             {
-                Parent.S71500.WriteInt($"DB{ID}.DBW0", 1);
+                short value = 1; //Khai báo kiểu short ( tương đương int 16 bits của S7)
+                Parent.S71500.WriteInt($"DB{ID}.DBW0", value);
             }
             DisplayAlert(Name,"Ok","Cancel");
            
