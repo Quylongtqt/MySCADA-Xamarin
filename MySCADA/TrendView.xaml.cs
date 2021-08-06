@@ -27,18 +27,6 @@ namespace MySCADA
             InitializeComponent();
             entries = new ObservableCollection<Entry>();
             cName.HeightRequest = 240;
-            //for (int i = 1; i < 100; i++)
-            //{
-            //    a++;
-            //    entries.Add(new Entry(a)
-            //    {
-            //        Color = SkiaSharp.SKColor.Parse("#FF1493"),
-
-
-
-            //    });
-
-            //}
 
             Device.StartTimer(TimeSpan.FromMilliseconds(3000), () =>
             {
@@ -66,7 +54,6 @@ namespace MySCADA
                                 });
                             }
 
-
                         }
                         if (temp < 10)
                         {
@@ -82,47 +69,23 @@ namespace MySCADA
                                         Color = SkiaSharp.SKColor.Parse("#FF1493"),
                                         Label = $"{temp1}",
                                         ValueLabel = Convert.ToString(task3.aHistory[temp1])
-
-
                                     });
                                 }
                                 else if(temp1>99)
-                                {
-                                  
-                                   
-                                   
-                                        entries.Add(new Entry(task3.aHistory[temp1-100])
-                                        {
-                                            Color = SkiaSharp.SKColor.Parse("#FF1493"),
-                                            Label = $"{temp1}",
-                                            ValueLabel = Convert.ToString(task3.aHistory[temp1-100])
-
-
-                                        });
-                                    
+                                {                                  
+                                    entries.Add(new Entry(task3.aHistory[temp1-100])
+                                    {
+                                        Color = SkiaSharp.SKColor.Parse("#FF1493"),
+                                        Label = $"{temp1}",
+                                        ValueLabel = Convert.ToString(task3.aHistory[temp1-100])
+                                    });                                
                                     
                                 }
                                 
                             }
 
                         }
-
-
-
-
                     }
-
-
-                    //entries.RemoveAt(0);
-                    //a--;
-
-                    //entries.Add(new Entry(a)
-                    //{
-                    //    Color = SkiaSharp.SKColor.Parse("#FF1493"),
-
-
-
-                    //});
 
                     cName.Chart = new LineChart { Entries = entries, LineMode = LineMode.Straight, AnimationDuration = new TimeSpan(0), BackgroundColor= SkiaSharp.SKColor.Parse("#FFFFFF"),IsAnimated=false} ;
                     

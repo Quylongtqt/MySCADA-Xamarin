@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySCADA.Android", "MySCADA.Android\MySCADA.Android.csproj", "{02373E51-F47B-4442-A7AA-79BC30C05CC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySCADA", "MySCADA\MySCADA.csproj", "{7A2CE6F7-0AD7-409C-8B9C-09049D77F35C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySCADA", "MySCADA\MySCADA.csproj", "{7A2CE6F7-0AD7-409C-8B9C-09049D77F35C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

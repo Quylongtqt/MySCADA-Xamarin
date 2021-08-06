@@ -43,14 +43,15 @@ namespace MySCADA
             {
                 if (thePLC.IsConnected)
                 {
+                    object obj = thePLC.Read("MW20");
+                    level = ((ushort)obj);
+
                     thePLC.ReadClass(Motor_1, 1);
                     thePLC.ReadClass(Motor_2, 2);
                     thePLC.ReadClass(Motor_3, 3);
                     thePLC.ReadClass(Motor_4, 4);
                     thePLC.ReadClass(Motor_5, 5);
-                    object obj = thePLC.Read("MW20");
-                    level = ((ushort)obj);
-
+                    
                 }
             }
             catch
@@ -102,7 +103,6 @@ namespace MySCADA
         public byte aByte { get; set; }
         public bool Cmd { get; set; }
         public bool Fault { get; set; }
-
         public byte aByte2 { get; set; }
         public ushort Pos { get; set; }
 
