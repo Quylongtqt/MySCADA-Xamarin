@@ -4,19 +4,23 @@
              x:Class="MySCADA.MOTOR">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lName" Text="N">
+            
+            <Label Grid.Column="1" Grid.Row="2" Text="Chọn chế độ" HorizontalOptions="Center" Style="{DynamicResource SubtitleStyle}">
+            </Label>
+            
+            <Label x:Name="lName" HorizontalOptions="Center" Text="N">
             </Label>
             
             <Picker x:Name="pName" ItemsSource="{Binding pItems}"  SelectedIndexChanged="pName_SelectedIndexChanged" >
             </Picker>
-
+            
             <Button x:Name="bOnName" Text="MOTOR ON" Clicked="bOnName_Clicked">
             </Button>
             
             <Button x:Name="bOffName" Text="MOTOR OFF" Clicked="bOffName_Clicked">
             </Button>
             
-            <Image x:Name="iName" Source="off.png" WidthRequest="200" HeightRequest="200">                
+            <Image x:Name="iName" Source="Motor.png" WidthRequest="200" HeightRequest="200">                
             </Image>
         </StackLayout>
     </ContentPage.Content>

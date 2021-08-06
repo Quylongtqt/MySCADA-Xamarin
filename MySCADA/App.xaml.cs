@@ -207,13 +207,12 @@ namespace MySCADA
             Root.RunTask("Task_7");
             Root.RunTask("Task_8");
 
-
             MOTOR Motor_4_Faceplate = new MOTOR(4);
             MOTOR Motor_5_Faceplate = new MOTOR(5);
 
             StationPage2 stationView_2 = new StationPage2();
             MainPage2 mainPage_2 = new MainPage2();
-            TrendView trendView_2 = new TrendView();
+            TrendView2 trendView_2 = new TrendView2();
             AlarmView alarmView_2 = new AlarmView();
 
 
@@ -222,7 +221,7 @@ namespace MySCADA
 
             Root.AddStation2View(stationView_2);
             Root.AddMain2View(mainPage_2);
-            Root.AddTrendView(trendView_2);
+            Root.AddTrend2View(trendView_2);
             Root.AddAlarmView(alarmView_2);
 
             //////////////// Home page //////////////////////

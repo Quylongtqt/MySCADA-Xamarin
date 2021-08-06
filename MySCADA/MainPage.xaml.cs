@@ -59,14 +59,12 @@ namespace MySCADA
                     Tag tag2;
                     if (task2 != null)
                     {
-
                         tag2 = task2.FindTag("level");
                         if (tag2 != null)
                         {
                             lName.Text = Convert.ToString(tag2.Value);
                             pName.Progress = Convert.ToDouble(tag2.Value) / 100d;
                         }
-
                     }
 
                     // interact with UI elements

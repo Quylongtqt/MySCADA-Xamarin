@@ -18,6 +18,7 @@ namespace MySCADA
 
         public SCADA Parent;
         public ushort level;
+        public ushort level_2;
         public PLC()
         {
             thePLC = new Plc(CpuType.S71500, IPAddress, 0, 1);
@@ -45,13 +46,13 @@ namespace MySCADA
                 {
                     object obj = thePLC.Read("MW20");
                     level = ((ushort)obj);
-
+                    level_2 = level; // simulate level2 is level
                     thePLC.ReadClass(Motor_1, 1);
                     thePLC.ReadClass(Motor_2, 2);
                     thePLC.ReadClass(Motor_3, 3);
-                    thePLC.ReadClass(Motor_4, 4);
-                    thePLC.ReadClass(Motor_5, 5);
-                    
+                    thePLC.ReadClass(Motor_4, 1); // simulate motor 4 is motor 1
+                    thePLC.ReadClass(Motor_5, 2); // simulate motor 5 is motor 2
+
                 }
             }
             catch

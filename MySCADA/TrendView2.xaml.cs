@@ -15,21 +15,20 @@ using SolidBrush = MindFusion.Drawing.SolidBrush;
 namespace MySCADA
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TrendView : ContentPage
+    public partial class TrendView2 : ContentPage
     {
         int ID;
         public SCADA Parent;
         static int a;
         public ObservableCollection<Entry> entries { get; set; }
 
-
         MyDateTimeSeries LineLevel;
 
-        public TrendView()
+        public TrendView2()
         {
 
             InitializeComponent();
-
+            
             entries = new ObservableCollection<Entry>();
 
             LineLevel = new MyDateTimeSeries(DateTime.Now, DateTime.Now, DateTime.Now.AddMinutes(1));
@@ -40,7 +39,7 @@ namespace MySCADA
             LineLevel.MaxValue = 120;
             LineLevel.Title = "Áp suất";
             LineLevel.SupportedLabels = LabelKinds.XAxisLabel;
-
+            
 
             // setup chart           
             lineChart.Series.Add(LineLevel);
@@ -72,16 +71,16 @@ namespace MySCADA
             lineChart.TitleMargin = new Margins(10);
             lineChart.GridType = GridType.Horizontal;
 
-
+            
             lineChart.GridType = GridType.Horizontal;
             lineChart.LineType = LineType.Polyline;
 
             // Time tick
             Device.StartTimer(TimeSpan.FromMilliseconds(3000), () =>
             {
-
+                
                 Device.BeginInvokeOnMainThread(() =>
-                {
+                { 
                     Task task3 = Parent.FindTask("Task_3");
                     if (task3 != null)
                     {
@@ -96,13 +95,15 @@ namespace MySCADA
                                 ushort pressure = ((ushort)tag2.Value);
                                 LineLevel.addValue(pressure);
                             }
-                        }
+                        }                        
                     }
 
                 });
                 return true; // runs again, or false to stop
             });
-
+            
         }
+
     }
+    
 }

@@ -20,7 +20,7 @@ namespace MySCADA
         public MOTOR(int id)
         {
             pItems = new ObservableCollection<string>()
-            {"Auto","Manual"};
+            {"AUTO","MANUAL"};
 
             InitializeComponent();
            
@@ -47,8 +47,8 @@ namespace MySCADA
                         if (temp_tag1 != null)
                         {
                             if (Convert.ToBoolean(temp_tag1.Value))
-                                iName.Source = "on.png";
-                            else iName.Source = "off.png";
+                                iName.Source = "MotorON.png";
+                            else iName.Source = "Motor.png";
                         }
                     }
 
@@ -65,8 +65,8 @@ namespace MySCADA
                         if (temp_tag2 != null)
                         {
                             if (Convert.ToBoolean(temp_tag2.Value))
-                                iName.Source = "on.png";
-                            else iName.Source = "off.png";
+                                iName.Source = "MotorON.png";
+                            else iName.Source = "Motor.png";
                         }
                     }
 
@@ -90,17 +90,17 @@ namespace MySCADA
         private void pName_SelectedIndexChanged(object sender, EventArgs e)
         {
             var Name = pName.Items[pName.SelectedIndex];
-            if (Name == "Auto")
+            if (Name == "AUTO")
             {
                 short value = 2; //Khai báo kiểu short ( tương đương int 16 bits của S7)
                 Parent.S71500.WriteInt($"DB{ID}.DBW0", value);
             }
-            else if (Name == "Manual")
+            else if (Name == "MANUAL")
             {
                 short value = 1; //Khai báo kiểu short ( tương đương int 16 bits của S7)
                 Parent.S71500.WriteInt($"DB{ID}.DBW0", value);
             }
-            DisplayAlert(Name,"Ok","Cancel");
+            DisplayAlert(Name,"Đã thay đổi chế độ","OK");
            
         }
     }

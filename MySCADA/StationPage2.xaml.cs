@@ -36,7 +36,7 @@ namespace MySCADA
             }
             else if (item.Id == 2)
             {
-                Navigation.PushAsync((Page)App.Root.Trend[0]);
+                Navigation.PushAsync((Page)App.Root.Trend2[0]);
             }
             else if (item.Id == 3)
             {

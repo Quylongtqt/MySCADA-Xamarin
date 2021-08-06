@@ -41,8 +41,7 @@
                     Tapped="TapGestureRecognizer_Tapped_2"
                     NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
-        </Image>
-        
+        </Image>        
         
     </StackLayout>
 </ContentPage>

@@ -12,9 +12,9 @@ namespace MySCADA
         public ArrayList Main = new ArrayList();
         public ArrayList Main2 = new ArrayList();
         public ArrayList Trend = new ArrayList();
+        public ArrayList Trend2 = new ArrayList();
         public ArrayList Alarm = new ArrayList();
         public ArrayList Motor_Faceplate = new ArrayList();
-        public ArrayList Valve_Faceplate = new ArrayList();
         public ArrayList Map = new ArrayList();
         public ArrayList Station = new ArrayList();
         public ArrayList Station2 = new ArrayList();
@@ -54,7 +54,11 @@ namespace MySCADA
             fpl.Parent = this;
             Trend.Add(fpl);
         }
-
+        public void AddTrend2View(TrendView2 fpl)
+        {
+            fpl.Parent = this;
+            Trend2.Add(fpl);
+        }
         public void AddAlarmView(AlarmView fpl)
         {
             fpl.Parent = this;

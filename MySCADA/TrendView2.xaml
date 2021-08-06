@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dashboard="clr-namespace:MindFusion.Charting.Controls;assembly=MindFusion.Charting"
-             x:Class="MySCADA.TrendView">
+             x:Class="MySCADA.TrendView2">
 
     <StackLayout>
-        <Label Text="Áp suất bồn chứa Trạm sông Tắc (Kpa) " HorizontalOptions="Center" HeightRequest="40">
+        <Label Text="Áp suất bồn chứa Trạm Gò Công (Kpa) " HorizontalOptions="Center" HeightRequest="40">
         </Label>
 
         <dashboard:LineChart x:Name="lineChart" WidthRequest="300" HeightRequest="350" />

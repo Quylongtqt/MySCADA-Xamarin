@@ -71,7 +71,7 @@ namespace MySCADA
             }
             if (e.Pin.Tag.ToString() == "id_3")
             {
-                Navigation.PushAsync((Page)App.Root.Trend[0]);
+                Navigation.PushAsync((Page)App.Root.Station2[0]);
             }
         }
     }

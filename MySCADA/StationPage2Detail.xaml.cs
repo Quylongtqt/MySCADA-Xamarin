@@ -42,17 +42,16 @@ namespace MySCADA
 
                     }
 
-                    Task task6 = App.Root.FindTask("Task_6");
+                    Task task6 = App.Root.FindTask("Task_2");
                     Tag tag1;
                     if (task6 != null)
                     {
-                        tag1 = task6.FindTag("level_2");
+                        tag1 = task6.FindTag("level");
                         if (tag1 != null)
                         {
                             lName.Text = Convert.ToString(tag1.Value);
                             pName.Progress = Convert.ToDouble(tag1.Value) / 100d;
                         }
-
                     }
 
                     // interact with UI elements
