@@ -123,7 +123,6 @@ namespace MySCADA
             MOTOR Motor_3_Faceplate = new MOTOR(3);
 
             StationPage stationView = new StationPage();
-            MainPage mainPage = new MainPage();
             TrendView trendView = new TrendView();
             AlarmView alarmView = new AlarmView();
             
@@ -131,7 +130,6 @@ namespace MySCADA
             Root.AddFaceplate(Motor_1_Faceplate);
             Root.AddFaceplate(Motor_2_Faceplate);
             Root.AddFaceplate(Motor_3_Faceplate);
-            Root.AddMainView(mainPage);
             
             Root.AddStationView(stationView);
             Root.AddTrendView(trendView);
@@ -211,7 +209,6 @@ namespace MySCADA
             MOTOR Motor_5_Faceplate = new MOTOR(5);
 
             StationPage2 stationView_2 = new StationPage2();
-            MainPage2 mainPage_2 = new MainPage2();
             TrendView2 trendView_2 = new TrendView2();
             AlarmView alarmView_2 = new AlarmView();
 
@@ -220,7 +217,6 @@ namespace MySCADA
             Root.AddFaceplate(Motor_5_Faceplate);
 
             Root.AddStation2View(stationView_2);
-            Root.AddMain2View(mainPage_2);
             Root.AddTrend2View(trendView_2);
             Root.AddAlarmView(alarmView_2);
 

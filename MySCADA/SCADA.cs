@@ -32,22 +32,13 @@ namespace MySCADA
             fpl.Parent = this;
             Station.Add(fpl);
         }
-        public void AddMainView(MainPage fpl)
-        {
-            fpl.Parent = this;
-            Main.Add(fpl);
-        }
+        
 
         // Trạm 2:
         public void AddStation2View(StationPage2 fpl)
         {
             fpl.Parent = this;
             Station2.Add(fpl);
-        }
-        public void AddMain2View(MainPage2 fpl)
-        {
-            fpl.Parent = this;
-            Main2.Add(fpl);
         }
         public void AddTrendView(TrendView fpl)
         {
